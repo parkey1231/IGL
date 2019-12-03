@@ -49,8 +49,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\BooleanToBackgroundConverter.cs" />
-    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="InfoBarModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -94,6 +92,10 @@
     <ProjectReference Include="..\CompositeCommands\CompositeCommands.csproj">
       <Project>{5f951b4e-d0b7-431c-b92b-abedba3215d2}</Project>
       <Name>CompositeCommands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{522efba9-e4ed-46fb-8105-42c62fb843f2}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

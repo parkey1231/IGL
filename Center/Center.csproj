@@ -229,7 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacePanel\FacePanel.csproj">
-      <Project>{DDF0B0BF-245C-45AC-BA66-9D52E95B2CF8}</Project>
+      <Project>{ddf0b0bf-245c-45ac-ba66-9d52e95b2cf8}</Project>
       <Name>FacePanel</Name>
     </ProjectReference>
   </ItemGroup>

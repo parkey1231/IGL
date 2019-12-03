@@ -143,6 +143,7 @@
                 <TextBlock Margin="0,0,50,0" Text="Recipe Name" Foreground="White" VerticalAlignment="Center" />
                 <TextBox Width="1350" />
             </StackPanel>
+            <Views:ParameterItem1 HorizontalAlignment="Left" Height="100" Margin="392,141,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100"/>
 
         </Grid>
 

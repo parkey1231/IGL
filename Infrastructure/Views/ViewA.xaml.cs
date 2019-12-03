@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UI.Library
+namespace Infrastructure.Views
 {
     /// <summary>
-    /// Interaction logic for Button.xaml
+    /// Interaction logic for ViewA.xaml
     /// </summary>
-    public partial class Button : UserControl
+    public partial class ViewA : UserControl
     {
-        public Button()
+        public ViewA()
         {
             InitializeComponent();
         }

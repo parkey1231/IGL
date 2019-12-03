@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace UI.Infrastructure.Converters
+namespace Infrastructure.Converters
 {
-    public class BooleanToBrushConverter : IValueConverter
+    public class BooleanToBackgroundConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool? state = value as bool?;
+            bool? state = (bool?)value;
             if (state == null)
-                return Brushes.Gray;
-
+          
+                return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF005EB8"));
+           
             if (state == true)
-                return Brushes.LimeGreen;
+          
+                return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF7896D2"));
+           
 
-            return Brushes.Gray;
+            return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF005EB8"));
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
