@@ -1,0 +1,660 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Menu.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:ViewModels="clr-namespace:Menu.ViewModels"
+             xmlns:Converters="clr-namespace:Menu.Converters"
+             xmlns:Menu="clr-namespace:Menu"
+             x:Class="Menu.Views.MenuView"
+             mc:Ignorable="d"
+             Name="UserControlMenu"
+             d:DesignHeight="2800"
+             d:DesignWidth="240"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <UserControl.Resources>
+
+        <Converters:BooleanToBackgroundConverter x:Key="BooleanToBackgroundConverter"/>
+
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="37" />
+            <Setter Property="Height" Value="37" />
+        </Style>        
+
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2"
+                               SnapsToDevicePixels="true"
+                               Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                               StrokeThickness="1"
+                               StrokeDashArray="1 2" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FF005EB8" />
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070" />
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF7896D2" />
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="White" />
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FF7896D2" />
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FF7896D2" />
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="Black" />
+
+        <!-- Button Style -->
+        <Style x:Key="ButtonStyleLeftNavigation"
+           TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle"
+                Value="{StaticResource FocusVisual}" />
+            <Setter Property="Background"
+                Value="{StaticResource Button.Static.Background}" />
+            <Setter Property="BorderBrush"
+                Value="{StaticResource Button.Static.Border}" />
+            <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Height" Value="50" />
+            <!--<Setter Property="Width" Value="220" />-->
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                          Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted"
+                                 Value="true">
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <!--<Trigger Property="IsMouseOver"
+                                 Value="true">
+                                <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.MouseOver.Background}" />
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.MouseOver.Border}" />
+                            </Trigger>-->
+                            <Trigger Property="IsPressed"
+                                 Value="true">
+                                <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Pressed.Background}" />
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Pressed.Border}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled"
+                                 Value="false">
+                                <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Disabled.Background}" />
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Disabled.Border}" />
+                                <Setter Property="TextElement.Foreground"
+                                    TargetName="contentPresenter"
+                                    Value="{StaticResource Button.Disabled.Foreground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </UserControl.Resources>
+
+    <!--<UserControl.Resources>
+
+        <ResourceDictionary Source="pack://application:,,,/IGL;component/Resource/DictionaryTK.xaml" />
+
+    </UserControl.Resources>-->
+
+    <StackPanel Width="{Binding ElementName=UserControlMenu, Path=ActualWidth}">
+
+        <StackPanel>
+            <!-- Home button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding GoHomeCommand}">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Home" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/Home.png" />      
+                    
+                    
+                </StackPanel>
+            </Button>
+
+            <StackPanel Margin="10 2 0 0" 
+                        Visibility="{Binding HomeSubPanelStatus}">
+                <!--Main button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.ShowCompositeCommand}"
+                        CommandParameter="Main" 
+                        Background="{Binding HomeMainButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Main" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Home.01 Main.png" />
+                    </StackPanel>
+                </Button>
+                <!--Inlet button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.ShowCompositeCommand}"
+                        CommandParameter="Inlet" 
+                        Background="{Binding HomeInletButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Inlet" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Home.02 Inlet.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Body button -->
+                <Button Margin="0 0 0 2"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.ShowCompositeCommand}"
+                        CommandParameter="Body"
+                        Background="{Binding HomeBodyButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Body" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Home.03 Body.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Outlet button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ApplicationCommands.ShowCompositeCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        CommandParameter="Outlet"
+                        Background="{Binding HomeOutletButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Outlet" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Home.05 Outlet.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Spray button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ApplicationCommands.ShowCompositeCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        CommandParameter="Spray"
+                        Background="{Binding HomeSprayButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Spray" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Home.04 Spraying.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Wip button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ApplicationCommands.ShowCompositeCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        CommandParameter="Wip"
+                        Background="{Binding HomeWIPButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Wip" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Home.06 WIP.png" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel>
+            <!-- Process button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding GoProcessCommand}"
+                    CommandParameter="Process">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Process" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/Process.png" />
+                </StackPanel>
+            </Button>
+
+            <StackPanel Margin="10 2 0 0" 
+                        Visibility="{Binding ProcessSubPanelStatus}">
+
+                <!-- BatchInfo button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.ShowCompositeCommand}"
+                        CommandParameter="BatchInfo" 
+                        Background="{Binding ProcessBatchInfoButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Batch info" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.batch Info.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Process Recipe button -->
+                <Button Margin="0 0 0 2"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                        CommandParameter="ProcessRecipe"
+                        Background="{Binding ProcessRecipeButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Recipe" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Recipe.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Start button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessStartCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Start" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Start.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Pause button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessPauseCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Pause" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Pause.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Stop button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessStopCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Stop" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Stop.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Filling button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessFillingCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Filling" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Filling.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Tempering button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessTemperingCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Tempering" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Tempering.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Spraying button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessSprayCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Spraying" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Spraying.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Discharging button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessDischargeCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Discharging" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.Discharging.png" />
+                    </StackPanel>
+                </Button>
+                <!-- HSM Filling button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessHSMFillingCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="HSM Filling" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.HSM Filling.png" />
+                    </StackPanel>
+                </Button>
+                <!-- HSM Mixing button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessHSMMixingCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="HSM Mixing" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.HSM Mixing.png" />
+                    </StackPanel>
+                </Button>
+                <!-- HSM Spraying button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessHSMSprayCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="HSM Spraying" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.HSM Spraying.png" />
+                    </StackPanel>
+                </Button>
+                <!-- HSM Transfer button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ProcessHSMTransferCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="HSM Transfer" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Process.HSM Transfer.png" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel>
+            <!-- WIP button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding GoWIPCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Wip" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/WIP.png" />
+                </StackPanel>
+            </Button>
+
+            <StackPanel Margin="10 2 0 0" 
+                        Visibility="{Binding WIPSubPanelStatus}">
+                <!--Recipe button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                        CommandParameter="WIPRecipe" 
+                        Background="{Binding WIPRecipeButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Recipe" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/WIP.Recipe.png" />
+                    </StackPanel>
+                </Button>
+                <!--Start button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding WIPStartCommand}">
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Start" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/WIP.Start.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Stop button -->
+                <Button Margin="0 0 0 2"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding WIPStopCommand}">
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Stop" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/WIP.Stop.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Pause button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding WIPPauseCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Pause" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/WIP.Pause.png" />
+                    </StackPanel>
+                </Button>                
+                
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel>
+            <!-- Dismounting button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                    CommandParameter="Dismounting" 
+                    Background="{Binding DismountingButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Dismounting" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/Dismounting.png" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel>
+            <!-- Trend button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                    CommandParameter="Trend" 
+                    Background="{Binding TrendButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Trend" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/Trend.png" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel>
+            <!-- Alarms button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                    CommandParameter="Alarms" 
+                    Background="{Binding AlarmsButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Alarms" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/Alarms.png" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel>
+            <!-- Report button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding GoReprotCommand}">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Report" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/Reports.png" />
+                </StackPanel>
+            </Button>
+
+            <StackPanel Margin="10 2 0 0" 
+                        Visibility="{Binding ReportSubPanelStatus}">
+                <!--Parameter button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ReportParameterCommand}"
+                        Background="{Binding ReportParameterButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Parameter" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Reports.Parameter.png" />
+                    </StackPanel>
+                </Button>
+                <!--Process Report button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ReportProcessReportCommand}"
+                        Background="{Binding ReportProcessReportButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Process Report" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Reports.Process Reports.png" />
+                    </StackPanel>
+                </Button>
+                <!-- WIP Report button -->
+                <Button Margin="0 0 0 2"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ReportWIPReportCommand}"
+                        Background="{Binding ReportWIPReportButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="WIP Report" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Reports.WIP Reports.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Audit Trail button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ReportAuditTrailCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Background="{Binding ReportAuditTrailButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Audit Trail" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Reports.Downtime Audit Trail.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Process Recipe button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ReportProcessRecipeCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Background="{Binding ReportProcessRecipeButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Process Recipe" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Reports.Process Recipes.png" />
+                    </StackPanel>
+                </Button>
+                <!-- WIP Recipe button -->
+                <Button Margin="0 0 0 2"
+                        Command="{Binding ReportWIPRecipeCommand}"
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Background="{Binding ReportWIPRecipeButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="WIP Recipe" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Reports.WIP Recipes.png" />
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+
+            
+        </StackPanel>
+
+        <StackPanel>
+            <!-- Service button -->
+            <Button Style="{DynamicResource ButtonStyleLeftNavigation}"
+                    Command="{Binding GoServiceCommand}">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Service" Width="120" Padding="10 0 0 0" />
+                    <Border Width="75" />
+                    <Image  Source="/Menu;component/Images/Service.png" />
+                </StackPanel>
+            </Button>
+
+            <StackPanel Margin="10 2 0 0" 
+                        Visibility="{Binding ServiceSubpanelStaus}">
+                <!--Parameter button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                        CommandParameter="ServiceParameter" 
+                        Background="{Binding ServiceParameterButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Parameter" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Service.Parameter.png" />
+                    </StackPanel>
+                </Button>
+                <!--Revision button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                        CommandParameter="Revision" 
+                        Background="{Binding ServiceRevisionButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Revision" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Service.Revision.png" />
+                    </StackPanel>
+                </Button>
+                <!-- PLC button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                        CommandParameter="PLC" 
+                        Background="{Binding ServicePLCButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="PLC" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/Service.PLC Variables.png" />
+                    </StackPanel>
+                </Button>
+                <!-- Info button -->
+                <Button Margin="0 0 0 2"                          
+                        Style="{DynamicResource ButtonStyleLeftNavigation}"
+                        Command="{Binding ApplicationCommands.HiddeCompositeCommand}"
+                        CommandParameter="Info" 
+                        Background="{Binding ServiceInfoButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}" >
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Info" Width="120" Padding="10 0 0 0" />
+                        <Border Width="65" />
+                        <Image  Source="/Menu;component/Images/service.info.png" />
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+
+
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

@@ -1,0 +1,416 @@
+<?xml version="1.0"?>
+<VisuMain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Objects>
+    <Item xsi:type="ActualValue">
+      <Name>GCLS</Name>
+      <Popup />
+      <Location>
+        <X>588</X>
+        <Y>88</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.GCLS.m_Visu.GasWarnLevel.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item>
+      <Name>Process unit</Name>
+      <Popup />
+      <Location>
+        <X>80</X>
+        <Y>610</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>BACV</Name>
+      <Popup />
+      <Location>
+        <X>362</X>
+        <Y>203</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>DACV</Name>
+      <Popup />
+      <Location>
+        <X>427</X>
+        <Y>291</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>OEXS</Name>
+      <Popup />
+      <Location>
+        <X>230</X>
+        <Y>291</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>BACV</Name>
+      <Popup />
+      <Location>
+        <X>411</X>
+        <Y>193</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.DedusterBypass.m_Visu.SPS_eVisuStateBypassValve</OPCItem>
+      <Pictures>
+        <Item>FlapHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>DACV</Name>
+      <Popup />
+      <Location>
+        <X>430</X>
+        <Y>272</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.DedusterBypass.m_Visu.SPS_eVisuStateMainValve</OPCItem>
+      <Pictures>
+        <Item>FlapVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>PRPS</Name>
+      <Popup />
+      <Location>
+        <X>168</X>
+        <Y>471</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.SPS_rBodyPressureZeroed</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item>
+      <Name>MPAF</Name>
+      <Popup />
+      <Location>
+        <X>918</X>
+        <Y>297</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>DITV</Name>
+      <Popup />
+      <Location>
+        <X>224</X>
+        <Y>161</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>OAHS</Name>
+      <Popup />
+      <Location>
+        <X>744</X>
+        <Y>211</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.OAHS.m_Visu.ActualValue.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>DITV</Name>
+      <Popup />
+      <Location>
+        <X>224</X>
+        <Y>142</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Discharge.m_Visu.SPS_eVisuStateTubeValve</OPCItem>
+      <Pictures>
+        <Item>FlapVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>MPAF</Name>
+      <Popup />
+      <Location>
+        <X>918</X>
+        <Y>213</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.AirVolume.m_Visu.SPS_eVisuStateVentilator</OPCItem>
+      <Pictures>
+        <Item>VentVertRightGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>ODDP(H11)</Name>
+      <Popup />
+      <Location>
+        <X>441</X>
+        <Y>88</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.ODDP.m_Visu.DiffPressure.rValue</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>OATS</Name>
+      <Location>
+        <X>168</X>
+        <Y>340</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureOutlet.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Heater.m_Visu.TemperatureOutlet.rSetpoint</OPCItemSetpoint>
+      <Min>0</Min>
+      <Max>90</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>MPAF</Name>
+      <Popup />
+      <Location>
+        <X>921</X>
+        <Y>191</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.AirVolume.m_Visu.Ventilator.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>OACV</Name>
+      <Popup />
+      <Location>
+        <X>173</X>
+        <Y>250</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.OACV.m_Visu.ControlValue.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item>
+      <Name>OACV</Name>
+      <Popup />
+      <Location>
+        <X>174</X>
+        <Y>291</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>outlet thermometer</Name>
+      <Popup />
+      <Location>
+        <X>249</X>
+        <Y>366</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eTempsource</OPCItem>
+      <Pictures>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerActive.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>PDSJ</Name>
+      <Popup />
+      <Location>
+        <X>168</X>
+        <Y>418</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.SPS_rFilterDiffPressure</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAVS</Name>
+      <Popup />
+      <Location>
+        <X>168</X>
+        <Y>524</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.AirVolume.m_Visu.AirVolume.Feedback.rValue</OPCItem>
+      <Unit>m³/h</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint>Main.AirVolume.m_Visu.AirVolume.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>4000</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>OEXS</Name>
+      <Popup />
+      <Location>
+        <X>233</X>
+        <Y>272</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.OEXS.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ExValveGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>OACV</Name>
+      <Popup />
+      <Location>
+        <X>177</X>
+        <Y>272</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.OACV.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>FlapVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>DedusterF9</Name>
+      <Popup />
+      <Location>
+        <X>482</X>
+        <Y>251</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.ODDP.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>F9Gray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>DedusterTop</Name>
+      <Popup />
+      <Location>
+        <X>473</X>
+        <Y>182</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Deduster.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>DedusterSingleGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>CleanValve</Name>
+      <Popup />
+      <Location>
+        <X>838</X>
+        <Y>369</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Deduster.m_Visu.SPS_eVisuStateCleaning</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Cleaning</Name>
+      <Location>
+        <X>808</X>
+        <Y>418</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Deduster.m_Visu.PC_xPopToggleDeduster</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>120</X>
+        <Y>60</Y>
+      </Size>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Background</Name>
+      <Popup />
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Pictures>
+        <Item>Background.png</Item>
+      </Pictures>
+      <Colorizers>
+        <Item>
+          <Location>
+            <X>143</X>
+            <Y>282</Y>
+          </Location>
+          <OpcItem>Main.AirVolume.m_Visu.SPS_eVisuStateVentilator</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>713</X>
+            <Y>272</Y>
+          </Location>
+          <OpcItem>Main.AirVolume.m_Visu.SPS_eVisuStateVentilator</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>91</X>
+            <Y>152</Y>
+          </Location>
+          <OpcItem>Main.Discharge.m_Visu.SPS_eVisuStateTubeValve</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>685</X>
+            <Y>393</Y>
+          </Location>
+          <OpcItem>Main.Deduster.m_Visu.SPS_eVisuStateCleaning</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>447</X>
+            <Y>281</Y>
+          </Location>
+          <OpcItem>Main.DedusterBypass.m_Visu.SPS_eVisuStateMainValve</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>638</X>
+            <Y>206</Y>
+          </Location>
+          <OpcItem>Main.DedusterBypass.m_Visu.SPS_eVisuStateMainValve</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>537</X>
+            <Y>152</Y>
+          </Location>
+          <OpcItem>Main.DedusterBypass.m_Visu.SPS_eVisuStateBypassValve</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+      </Colorizers>
+    </Item>
+  </Objects>
+</VisuMain>

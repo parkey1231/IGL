@@ -1,0 +1,774 @@
+<?xml version="1.0"?>
+<VisuMain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Objects>
+    <Item xsi:type="DynamicPicture">
+      <Name />
+      <Popup />
+      <Location>
+        <X>828</X>
+        <Y>103</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCWV</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name />
+      <Popup />
+      <Location>
+        <X>905</X>
+        <Y>103</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWWWV</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item>
+      <Name>WDP2</Name>
+      <Popup />
+      <Location>
+        <X>662</X>
+        <Y>560</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name />
+      <Popup />
+      <Location>
+        <X>634</X>
+        <Y>523</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipDetergent2.m_Visu.SPS_eVisuStatePump</OPCItem>
+      <Pictures>
+        <Item>DetergentPumpGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name />
+      <Popup />
+      <Location>
+        <X>614</X>
+        <Y>549</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipDetergent2.m_Visu.SPS_eVisuStateLevel</OPCItem>
+      <Pictures>
+        <Item>DetergentGray.png</Item>
+        <Item>DetergentGreen.png</Item>
+        <Item>DetergentRed.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item>
+      <Name>PWWV</Name>
+      <Popup />
+      <Location>
+        <X>592</X>
+        <Y>371</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WCWV</Name>
+      <Popup />
+      <Location>
+        <X>834</X>
+        <Y>54</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>WWCL</Name>
+      <Popup />
+      <Location>
+        <X>985</X>
+        <Y>245</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.WaterLevel.Feedback.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>WWTS</Name>
+      <Popup />
+      <Location>
+        <X>763</X>
+        <Y>241</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_rTemperature</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>PRPS</Name>
+      <Popup />
+      <Location>
+        <X>25</X>
+        <Y>367</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.SPS_rBodyPressureZeroed</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAHS</Name>
+      <Popup />
+      <Location>
+        <X>25</X>
+        <Y>697</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Cooler.m_Visu.Humidity.Feedback.rValue</OPCItem>
+      <Unit>g/kg</Unit>
+      <Format>{0:f2}</Format>
+      <OPCItemSetpoint>Main.Cooler.m_Visu.Humidity.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>20</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Detergent</Name>
+      <Popup />
+      <Location>
+        <X>985</X>
+        <Y>602</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipDetergent.m_Visu.PC_xDetergent</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>0</X>
+        <Y>0</Y>
+      </Size>
+      <OPCItemFeedback>Main.WipDetergent.m_Visu.PC_xDetergent</OPCItemFeedback>
+      <ButtonMode>TOGGLE</ButtonMode>
+    </Item>
+    <Item>
+      <Name>WCLL</Name>
+      <Popup />
+      <Location>
+        <X>988</X>
+        <Y>309</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWCL</Name>
+      <Popup />
+      <Location>
+        <X>988</X>
+        <Y>220</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WDP1</Name>
+      <Popup />
+      <Location>
+        <X>774</X>
+        <Y>560</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWPM</Name>
+      <Popup />
+      <Location>
+        <X>793</X>
+        <Y>444</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WCDV</Name>
+      <Popup />
+      <Location>
+        <X>940</X>
+        <Y>450</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WHPV</Name>
+      <Popup />
+      <Location>
+        <X>936</X>
+        <Y>364</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WDWV</Name>
+      <Popup />
+      <Location>
+        <X>980</X>
+        <Y>54</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWWV</Name>
+      <Popup />
+      <Location>
+        <X>901</X>
+        <Y>54</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WCAV</Name>
+      <Popup />
+      <Location>
+        <X>652</X>
+        <Y>53</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWC5</Name>
+      <Popup />
+      <Location>
+        <X>483</X>
+        <Y>619</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWC4</Name>
+      <Popup />
+      <Location>
+        <X>483</X>
+        <Y>521</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWC3</Name>
+      <Popup />
+      <Location>
+        <X>483</X>
+        <Y>420</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWC2</Name>
+      <Popup />
+      <Location>
+        <X>483</X>
+        <Y>147</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>WWC1</Name>
+      <Popup />
+      <Location>
+        <X>483</X>
+        <Y>40</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Valve WWC1</Name>
+      <Popup />
+      <Location>
+        <X>489</X>
+        <Y>58</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[1].m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>Time WWC1</Name>
+      <Popup />
+      <Location>
+        <X>469</X>
+        <Y>98</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[1].m_Visu.SPS_tRemainTime</OPCItem>
+      <Unit>sec</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Valve WWC2</Name>
+      <Popup />
+      <Location>
+        <X>489</X>
+        <Y>165</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[2].m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>Time WWC2</Name>
+      <Popup />
+      <Location>
+        <X>469</X>
+        <Y>205</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[2].m_Visu.SPS_tRemainTime</OPCItem>
+      <Unit>sec</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Valve WWC3</Name>
+      <Popup />
+      <Location>
+        <X>489</X>
+        <Y>438</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[3].m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>Time WWC3</Name>
+      <Popup />
+      <Location>
+        <X>469</X>
+        <Y>478</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[3].m_Visu.SPS_tRemainTime</OPCItem>
+      <Unit>sec</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Valve WWC4</Name>
+      <Popup />
+      <Location>
+        <X>489</X>
+        <Y>539</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[4].m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>Time WWC4</Name>
+      <Popup />
+      <Location>
+        <X>469</X>
+        <Y>579</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[4].m_Visu.SPS_tRemainTime</OPCItem>
+      <Unit>sec</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Valve WWC5</Name>
+      <Popup />
+      <Location>
+        <X>489</X>
+        <Y>637</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[5].m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>Time WWC5</Name>
+      <Popup />
+      <Location>
+        <X>469</X>
+        <Y>678</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWashCircle[5].m_Visu.SPS_tRemainTime</OPCItem>
+      <Unit>sec</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WDP1</Name>
+      <Popup />
+      <Location>
+        <X>743</X>
+        <Y>523</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipDetergent.m_Visu.SPS_eVisuStatePump</OPCItem>
+      <Pictures>
+        <Item>DetergentPumpGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Detergent Container 1</Name>
+      <Popup />
+      <Location>
+        <X>723</X>
+        <Y>549</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipDetergent.m_Visu.SPS_eVisuStateLevel</OPCItem>
+      <Pictures>
+        <Item>DetergentGray.png</Item>
+        <Item>DetergentGreen.png</Item>
+        <Item>DetergentRed.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Drainage</Name>
+      <Popup />
+      <Location>
+        <X>146</X>
+        <Y>633</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Pictures>
+        <Item>DrainageGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Body</Name>
+      <Popup />
+      <Location>
+        <X>151</X>
+        <Y>72</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Wip.m_Visu.SPS_eBodyState</OPCItem>
+      <Pictures>
+        <Item>BodyNoWash.png</Item>
+        <Item>BodyWashCircle1.png</Item>
+        <Item>BodyWashCircle2.png</Item>
+        <Item>BodyWashCircle3.png</Item>
+        <Item>BodyWashCircle4.png</Item>
+        <Item>BodyWashCircle5.png</Item>
+        <Item>BodyNoWash.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WCAV</Name>
+      <Popup />
+      <Location>
+        <X>651</X>
+        <Y>103</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCAV</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WDWV</Name>
+      <Popup />
+      <Location>
+        <X>981</X>
+        <Y>103</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWDWV</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WCDV</Name>
+      <Popup />
+      <Location>
+        <X>907</X>
+        <Y>441</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCDV</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WHPV</Name>
+      <Popup />
+      <Location>
+        <X>905</X>
+        <Y>353</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWHPV</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WCLL</Name>
+      <Popup />
+      <Location>
+        <X>978</X>
+        <Y>312</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCLL</OPCItem>
+      <Pictures>
+        <Item>SealGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WWCL</Name>
+      <Popup />
+      <Location>
+        <X>978</X>
+        <Y>223</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWWCL</OPCItem>
+      <Pictures>
+        <Item>SealGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Water Container</Name>
+      <Popup />
+      <Location>
+        <X>885</X>
+        <Y>220</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eContState</OPCItem>
+      <Pictures>
+        <Item>WipContEmpty.png</Item>
+        <Item>WipContNoWater.png</Item>
+        <Item>WipContRinse.png</Item>
+        <Item>WipContFillingDenat.png</Item>
+        <Item>WipContReadyDenat.png</Item>
+        <Item>WipContFillingCold.png</Item>
+        <Item>WipContFillingWarm.png</Item>
+        <Item>WipContFillingDenat.png</Item>
+        <Item>WipContFillingWarm.png</Item>
+        <Item>WipContReadyCold.png</Item>
+        <Item>WipContReadyWarm.png</Item>
+        <Item>WipContReadyDenat.png</Item>
+        <Item>WipContEmptyOut.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Filter5um</Name>
+      <Popup />
+      <Location>
+        <X>652</X>
+        <Y>176</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCAV</OPCItem>
+      <Pictures>
+        <Item>Filter5umGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Filter01um</Name>
+      <Popup />
+      <Location>
+        <X>652</X>
+        <Y>251</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCAV</OPCItem>
+      <Pictures>
+        <Item>Filter01umGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>OATS</Name>
+      <Location>
+        <X>25</X>
+        <Y>186</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureOutlet.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>PRTS</Name>
+      <Location>
+        <X>25</X>
+        <Y>422</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureProduct.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IATS</Name>
+      <Location>
+        <X>25</X>
+        <Y>534</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureInlet.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Heater.m_Visu.TemperatureInlet.rSetpoint</OPCItemSetpoint>
+      <Min>0</Min>
+      <Max>90</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAVS</Name>
+      <Popup />
+      <Location>
+        <X>25</X>
+        <Y>615</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.AirVolume.m_Visu.AirVolume.Feedback.rValue</OPCItem>
+      <Unit>m³/h</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint>Main.AirVolume.m_Visu.AirVolume.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>2300</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>WWPM</Name>
+      <Popup />
+      <Location>
+        <X>795</X>
+        <Y>356</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.WipWaterPressure.m_Visu.SPS_eVisuStatePump</OPCItem>
+      <Pictures>
+        <Item>PumpLeftGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>OAHS</Name>
+      <Location>
+        <X>25</X>
+        <Y>241</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.OAHS.m_Visu.ActualValue.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Background</Name>
+      <Popup />
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Pictures>
+        <Item>Background.png</Item>
+      </Pictures>
+      <Colorizers>
+        <Item>
+          <Location>
+            <X>712</X>
+            <Y>172</Y>
+          </Location>
+          <OpcItem>Main.WipWaterProvider.m_Visu.SPS_eStateWWWV</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>932</X>
+            <Y>172</Y>
+          </Location>
+          <OpcItem>Main.WipWaterProvider.m_Visu.SPS_eStateWDWV</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>637</X>
+            <Y>172</Y>
+          </Location>
+          <OpcItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCAV</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>931</X>
+            <Y>374</Y>
+          </Location>
+          <OpcItem>Main.WipWaterProvider.m_Visu.SPS_eStateWHPV</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>856</X>
+            <Y>482</Y>
+          </Location>
+          <OpcItem>Main.WipWaterProvider.m_Visu.SPS_eStateWCDV</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>746</X>
+            <Y>418</Y>
+          </Location>
+          <OpcItem>Main.WipWaterPressure.m_Visu.SPS_eVisuStatePump</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>931</X>
+            <Y>482</Y>
+          </Location>
+          <OpcItem>Main.WipDetergent.m_Visu.SPS_eVisuStatePump</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+      </Colorizers>
+    </Item>
+  </Objects>
+</VisuMain>

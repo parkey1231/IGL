@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6AFEA7AE-6CB5-4A2D-B47B-19AA522E4365}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Menu</RootNamespace>
+    <AssemblyName>Menu</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\BooleanToBackgroundConverter.cs" />
+    <Compile Include="MenuModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="Views\MenuView.xaml.cs">
+      <DependentUpon>MenuView.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf">
+      <Version>7.2.0.1422</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\MenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home.01 Main.png" />
+    <Resource Include="Images\Home.02 Inlet.png" />
+    <Resource Include="Images\Home.03 Body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home.05 Outlet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home.04 Spraying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home.06 WIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Process.batch Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Process.Recipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Process.Start.png" />
+    <Resource Include="Images\Process.Stop.png" />
+    <Resource Include="Images\Process.Tempering.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Process.Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Process.Discharging.png" />
+    <Resource Include="Images\Process.Filling.png" />
+    <Resource Include="Images\Process.Spraying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Process.HSM Filling.png" />
+    <Resource Include="Images\Process.HSM Mixing.png" />
+    <Resource Include="Images\Process.HSM Spraying.png" />
+    <Resource Include="Images\Process.HSM Transfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WIP.png" />
+    <Resource Include="Images\WIP.Recipe.png" />
+    <Resource Include="Images\WIP.Start.png" />
+    <Resource Include="Images\WIP.Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WIP.Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dismounting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Reports.Downtime Audit Trail.png" />
+    <Resource Include="Images\Reports.Parameter.png" />
+    <Resource Include="Images\Reports.png" />
+    <Resource Include="Images\Reports.Process Recipes.png" />
+    <Resource Include="Images\Reports.Process Reports.png" />
+    <Resource Include="Images\Reports.Process.png" />
+    <Resource Include="Images\Reports.WIP Recipes.png" />
+    <Resource Include="Images\Reports.WIP Reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\service.detergent.png" />
+    <Resource Include="Images\service.info.png" />
+    <Resource Include="Images\Service.Parameter.Default.png" />
+    <Resource Include="Images\Service.Parameter.png" />
+    <Resource Include="Images\Service.Parameter.Print_Report.png" />
+    <Resource Include="Images\Service.Parameter.Restore.png" />
+    <Resource Include="Images\Service.Parameter.Save.png" />
+    <Resource Include="Images\Service.PLC Variables.png" />
+    <Resource Include="Images\Service.png" />
+    <Resource Include="Images\Service.Revision.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alarms.png" />
+    <Resource Include="Images\Trend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompositeCommands\CompositeCommands.csproj">
+      <Project>{5f951b4e-d0b7-431c-b92b-abedba3215d2}</Project>
+      <Name>CompositeCommands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InfoBar\InfoBar.csproj">
+      <Project>{f963dc13-b2bc-489c-a1da-09a642a1ff23}</Project>
+      <Name>InfoBar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*$(TargetExt)" "$(SolutionDir)$(SolutionName)\$(OutDir)Modules\" /Y /S</PostBuildEvent>
+  </PropertyGroup>
+</Project>

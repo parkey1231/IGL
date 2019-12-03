@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Center.Views.Process.BatchInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid HorizontalAlignment="Left" Width="1000" Margin="5 0 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="400"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FF005EB8">
+            <TextBlock Text="Record Data" Margin="5 0 0 0"  FontSize="16" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="121*"/>
+                <ColumnDefinition Width="379*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Batch No" FontSize="16" Foreground="White" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="1" Text="Title" FontSize="16" Foreground="White" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="2" Text="machine" FontSize="16" Foreground="White" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="3" Text="Projet/Customer" FontSize="16" Foreground="White" VerticalAlignment="Center" />
+
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="5" />
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" />
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" Background="Transparent" Text="Truking IGL100" Foreground="White" VerticalAlignment="Center" FontSize="16"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Margin="5" />
+
+
+            <TextBlock Grid.Row="6" Text="Notice/Process Description" FontSize="16" Foreground="White" VerticalAlignment="Center" />
+            <TextBox Grid.Row="7" Grid.ColumnSpan="2" Margin="5" />
+            <TextBox Grid.Row="8" Grid.ColumnSpan="2" Margin="5" />
+            <TextBox Grid.Row="9" Grid.ColumnSpan="2" Margin="5" />
+            <TextBox Grid.Row="10" Grid.ColumnSpan="2" Margin="5" />
+
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>

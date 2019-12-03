@@ -1,0 +1,540 @@
+﻿<UserControl x:Class="InfoBar.Views.Info"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:InfoBar.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:Converters="clr-namespace:InfoBar.Converters" 
+             Name="InfoBarUserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="1200" d:DesignWidth="500"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <UserControl.Resources>
+        <Converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <Converters:BooleanToBackgroundConverter x:Key="BooleanToBackgroundConverter"/>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Width" Value="37" />
+            <Setter Property="Height" Value="37" />
+        </Style>
+
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2"
+                               SnapsToDevicePixels="true"
+                               Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                               StrokeThickness="1"
+                               StrokeDashArray="1 2" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FF005EB8" />
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070" />
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF7896D2" />
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="White" />
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FF7896D2" />
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FF7896D2" />
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="Black" />
+
+        <!-- Button Style -->
+        <Style x:Key="ButtonStyleRightNavigation"
+           TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle"
+                Value="{StaticResource FocusVisual}" />
+            <Setter Property="Background"
+                Value="{StaticResource Button.Static.Background}" />
+            <Setter Property="BorderBrush"
+                Value="{StaticResource Button.Static.Border}" />
+            <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+
+
+            <!--<Setter Property="Width" Value="220" />-->
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                          Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted"
+                                 Value="true">
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <!--<Trigger Property="IsMouseOver"
+                                 Value="true">
+                                <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.MouseOver.Background}" />
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.MouseOver.Border}" />
+                            </Trigger>-->
+                            <Trigger Property="IsPressed"
+                                 Value="true">
+                                <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Pressed.Background}" />
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Pressed.Border}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled"
+                                 Value="false">
+                                <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Disabled.Background}" />
+                                <Setter Property="BorderBrush"
+                                    TargetName="border"
+                                    Value="{StaticResource Button.Disabled.Border}" />
+                                <Setter Property="TextElement.Foreground"
+                                    TargetName="contentPresenter"
+                                    Value="{StaticResource Button.Disabled.Foreground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        
+        
+        <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--<Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>-->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
+
+   
+
+    <Grid Visibility="{Binding InfoPanelStatus, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+        <Border x:Name="BatchViewPanel" Padding="5"
+                Width="420" HorizontalAlignment="Left"
+                Visibility="{Binding BatchViewButtonStatus,Converter={StaticResource BooleanToVisibilityConverter }}"
+                Background="Transparent" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="280" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.7*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid Background="#FF005EB8" Grid.ColumnSpan="2">
+                        <TextBlock Text="Batch On" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"
+                               Foreground="White" FontWeight="Bold" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBlock  Text="Batch" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" 
+                                    Foreground="White"  />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBlock  Text="Recipe" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" 
+                                    Foreground="White" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <TextBlock  Text="User" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" 
+                                    Foreground="White" />
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <TextBlock  Text="Start" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" 
+                                    Foreground="White" />
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <TextBlock  Text="Batch" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" 
+                                    Foreground="White" />
+                    </Grid>
+
+                    <TextBox Grid.Row="1" Grid.Column="1" 
+                             Background="Transparent" Padding="3" FontSize="16" Height="30" Foreground="White" IsReadOnly="True" Style="{DynamicResource TextBoxStyle}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" 
+                             Background="Transparent" Padding="3" FontSize="16" Height="30" Foreground="White" IsReadOnly="True" Style="{DynamicResource TextBoxStyle}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1"                                                                       
+                             Background="Transparent" Padding="3" FontSize="16" Height="30" Foreground="White" IsReadOnly="True" Style="{DynamicResource TextBoxStyle}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1"                                                                       
+                             Background="Transparent" Padding="3" FontSize="16" Height="30" Foreground="White" IsReadOnly="True" Style="{DynamicResource TextBoxStyle}"/>
+                    <TextBox Grid.Row="5" Grid.Column="1"                                                                       
+                             Background="Transparent" Padding="3" FontSize="16" Height="30" Foreground="White" IsReadOnly="True" Style="{DynamicResource TextBoxStyle}"/>
+
+
+
+                </Grid>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 15 0 0" >
+                    <Button Content="Goto" Width="160" Margin="15 0 60 0" BorderBrush="White"
+                            Style="{DynamicResource ButtonStyleRightNavigation}" />
+                    <Button Content="Next step" Width="160" BorderBrush="White"
+                            Style="{DynamicResource ButtonStyleRightNavigation}"  />
+                </StackPanel>
+
+                <DataGrid Grid.Row="2" Margin="0 15 0 0">
+
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <Border x:Name="GUIInfoPanel" Padding="5"
+                Width="420" HorizontalAlignment="Left"
+                Visibility="{Binding GUIInfoButtonStatus,Converter={StaticResource BooleanToVisibilityConverter }}"
+                Background="Transparent" VerticalAlignment="Stretch">
+            <StackPanel Background="#FF005EB8">
+                <TextBlock FontSize="18" Foreground="White">
+                    1111111
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White">
+                    1111111
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White">
+                    1111111
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White">
+                    1111111
+                </TextBlock>
+
+            </StackPanel>
+        </Border>
+       
+        <Border x:Name="ProcessPanel" Padding="5"
+                Width="420" HorizontalAlignment="Left"
+                Visibility="{Binding ProcessButtonStatus,Converter={StaticResource BooleanToVisibilityConverter }}"
+                Background="Transparent" VerticalAlignment="Stretch">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="260" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+                <StackPanel Background="#FF005EB8">
+                    <Grid Height="30">
+                        <TextBlock Text="Process pilot" FontSize="18" Foreground="White"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+
+                    <ListView Height="220" VerticalAlignment="Bottom" Margin="5" />
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button Content="Goto" Margin="5 0 0 0" Width="180" FontSize="18" Height="auto" BorderBrush="White"
+                            Style="{DynamicResource ButtonStyleRightNavigation}"/>
+                    <Button Content="Next Step" Margin="40 0 0 0" Width="180" FontSize="18" Height="auto" BorderBrush="White"
+                            Style="{DynamicResource ButtonStyleRightNavigation}"/>
+                </StackPanel>
+
+                <Border Grid.Row="2" Margin="0 5 0 0" Padding="2"
+                        BorderThickness="1" BorderBrush="Gray">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Process Step Parameter" Foreground="White" FontSize="18"
+                                       Grid.ColumnSpan="2" FontWeight="Bold"/>
+
+                            <TextBlock Grid.Row="1" Text="Recipe Name" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="2" Text="Description" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="3" Text="Start Time" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="4" Text="Active Step" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="5" Text="Step Time" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="6" Text="Step Hint" Foreground="White" FontSize="18"/>
+
+                            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="5" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="6" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+
+                        </Grid>
+
+
+
+                        <Grid Grid.Row="1" Margin="0 2 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+
+                            <Rectangle Grid.Row="0" Fill="Gray" Height="1" />
+                            <TextBlock Grid.Row="1" Text="Step End(Active Step)" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="2" Text="Linked by:" Foreground="White" FontSize="18" />
+                        </Grid>
+
+
+
+                    </Grid>
+
+
+
+
+                </Border>
+
+
+
+            </Grid>
+
+        </Border>
+      
+        <Border x:Name="WIPPanel" Padding="5"
+                Width="420" HorizontalAlignment="Left"
+                Visibility="{Binding WIPButtonStaus,Converter={StaticResource BooleanToVisibilityConverter }}"
+                Background="Transparent" VerticalAlignment="Stretch">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="260" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+                <StackPanel Background="#FF005EB8">
+                    <Grid Height="30">
+                        <TextBlock Text="Process pilot" FontSize="18" Foreground="White"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+
+                    <ListView Height="220" VerticalAlignment="Bottom" Margin="5" />
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button Content="Goto" Margin="5 0 0 0" Width="180" FontSize="18" Height="auto" BorderBrush="White"
+                            Style="{DynamicResource ButtonStyleRightNavigation}"/>
+                    <Button Content="Next Step" Margin="40 0 0 0" Width="180" FontSize="18" Height="auto" BorderBrush="White"
+                            Style="{DynamicResource ButtonStyleRightNavigation}"/>
+                </StackPanel>
+
+                <Border Grid.Row="2" Margin="0 5 0 0" Padding="2"
+                        BorderThickness="1" BorderBrush="Gray">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Process Step Parameter" Foreground="White" FontSize="18"
+                                       Grid.ColumnSpan="2" FontWeight="Bold"/>
+
+                            <TextBlock Grid.Row="1" Text="Recipe Name" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="2" Text="Description" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="3" Text="Start Time" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="4" Text="Active Step" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="5" Text="Step Time" Foreground="White" FontSize="18"/>
+                            <TextBlock Grid.Row="6" Text="Step Hint" Foreground="White" FontSize="18"/>
+
+                            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="5" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+                            <TextBox Grid.Row="6" Grid.Column="1" IsReadOnly="True" Background="Transparent" BorderThickness="0"/>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="0 2 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+
+                            <Rectangle Grid.Row="0" Fill="Gray" Height="1" />
+                            <TextBlock Grid.Row="1" Text="Step End Condition        and / or" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="2" Text="" Foreground="White" FontSize="18" />
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Buttons -->
+        <Canvas Visibility="Visible">
+            <!-- BatchView Button -->
+            <Button Content="Batch View"          
+                    Width="180" Height="30" 
+                    Background="{Binding BatchViewButtonStatus, Converter={StaticResource BooleanToBackgroundConverter}}"
+                    Style="{DynamicResource ButtonStyleRightNavigation}" 
+                    Command="{Binding BatchViewCommand}"
+                    RenderTransformOrigin="0.5,0.5" Canvas.Left="355" Canvas.Top="85">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <!-- GUI Info Button -->
+            <Button Content="GUI Info"             
+                    RenderTransformOrigin="0.5,0.5" Width="180" Height="30" Canvas.Left="355" Canvas.Top="275"
+                    Command="{Binding GUIInfoCommand}"
+                    Background="{Binding GUIInfoButtonStatus, Converter={StaticResource  BooleanToBackgroundConverter}}"
+                    Style="{DynamicResource ButtonStyleRightNavigation}">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <!-- Process Button -->
+            <Button Content="Process"           
+                    RenderTransformOrigin="0.5,0.5" Width="180" Height="30"
+                    Background="{Binding ProcessButtonStatus,Converter={StaticResource BooleanToBackgroundConverter}}"
+                    Command="{Binding ProcessCommand}"
+                    Style="{DynamicResource ButtonStyleRightNavigation}" Canvas.Left="355" Canvas.Top="465">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <!-- WIP Button -->
+            <Button Content="WIP"           
+                    RenderTransformOrigin="0.5,0.5" Width="180" Height="30"
+                    Background="{Binding WIPButtonStaus,Converter={StaticResource BooleanToBackgroundConverter}}"
+                    Command="{Binding WIPCommand}"
+                    Style="{DynamicResource ButtonStyleRightNavigation}" Canvas.Left="355" Canvas.Top="655">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+        </Canvas>
+
+    </Grid>
+
+</UserControl>

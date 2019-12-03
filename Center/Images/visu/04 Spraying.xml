@@ -1,0 +1,432 @@
+<?xml version="1.0"?>
+<VisuMain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Objects>
+    <Item>
+      <Name>SUPC</Name>
+      <Popup />
+      <Location>
+        <X>577</X>
+        <Y>583</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>SAPC</Name>
+      <Popup />
+      <Location>
+        <X>577</X>
+        <Y>537</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>Process unit</Name>
+      <Popup />
+      <Location>
+        <X>282</X>
+        <Y>315</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>SLPU</Name>
+      <Popup />
+      <Location>
+        <X>190</X>
+        <Y>628</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>SPC2</Name>
+      <Popup />
+      <Location>
+        <X>568</X>
+        <Y>638</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleLowerAirPress.m_Visu.Pressure.Feedback.rValue</OPCItem>
+      <Unit>bar</Unit>
+      <Format>{0:f2}</Format>
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>SPC1</Name>
+      <Popup />
+      <Location>
+        <X>567</X>
+        <Y>478</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleUpperAirPress.m_Visu.Pressure.Feedback.rValue</OPCItem>
+      <Unit>bar</Unit>
+      <Format>{0:f2}</Format>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Rotation</Name>
+      <Popup />
+      <Location>
+        <X>156</X>
+        <Y>126</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.PC_xRotationToggle</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>0</X>
+        <Y>0</Y>
+      </Size>
+      <OPCItemFeedback>Main.Nozzle.m_Visu.PC_xRotation</OPCItemFeedback>
+      <ButtonMode />
+    </Item>
+    <Item>
+      <Name>SAMV</Name>
+      <Popup />
+      <Location>
+        <X>844</X>
+        <Y>518</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>SLFS</Name>
+      <Popup />
+      <Location>
+        <X>287</X>
+        <Y>511</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.SPS_eVisuStateSprayrate</OPCItem>
+      <Pictures>
+        <Item>CoriolisVertikalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>SLPU</Name>
+      <Popup />
+      <Location>
+        <X>165</X>
+        <Y>532</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleSprayPump.m_Visu.Pump.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Nozzle.m_Visu.SPS_rPumpSetpoint</OPCItemSetpoint>
+      <OPCItemHide>Main.Nozzle.m_Visu.SPS_xPumpLoopControlled</OPCItemHide>
+      <Min>0</Min>
+      <Max>100</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>SLFS</Name>
+      <Popup />
+      <Location>
+        <X>165</X>
+        <Y>485</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.Sprayrate.Feedback.rValue</OPCItem>
+      <Unit>g/min</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint>Main.Nozzle.m_Visu.Sprayrate.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>1500</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>SQTP</Name>
+      <Popup />
+      <Location>
+        <X>165</X>
+        <Y>429</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.SPS_rSprayQuantityTotal</OPCItem>
+      <Unit>kg</Unit>
+      <Format>{0:f2}</Format>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>SQAS</Name>
+      <Popup />
+      <Location>
+        <X>165</X>
+        <Y>373</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.SPS_rSprayQuantityStep</OPCItem>
+      <Unit>kg</Unit>
+      <Format>{0:f2}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>SAPS</Name>
+      <Popup />
+      <Location>
+        <X>550</X>
+        <Y>398</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleUpperAirPress.m_Visu.Pressure.Feedback.rValue</OPCItem>
+      <Unit>bar</Unit>
+      <Format>{0:f2}</Format>
+      <OPCItemSetpoint>Main.NozzleUpperAirPress.m_Visu.Pressure.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>4</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>SUPS</Name>
+      <Popup />
+      <Location>
+        <X>550</X>
+        <Y>660</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleLowerAirPress.m_Visu.Pressure.Feedback.rValue</OPCItem>
+      <Unit>bar</Unit>
+      <Format>{0:f2}</Format>
+      <OPCItemSetpoint>Main.NozzleLowerAirPress.m_Visu.Pressure.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>4</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Manual / Auto</Name>
+      <Popup />
+      <Location>
+        <X>55</X>
+        <Y>126</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.PC_xPumpControlToggle</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>120</X>
+        <Y>50</Y>
+      </Size>
+      <OPCItemFeedback />
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Forward</Name>
+      <Popup />
+      <Location>
+        <X>55</X>
+        <Y>192</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.PC_xPumpForwardOn</OPCItem>
+      <FontSize>14.25</FontSize>
+      <Size>
+        <X>120</X>
+        <Y>50</Y>
+      </Size>
+      <OPCItemFeedback>Main.Nozzle.m_Visu.PC_xPumpForwardOn</OPCItemFeedback>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Backward</Name>
+      <Popup />
+      <Location>
+        <X>55</X>
+        <Y>258</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.PC_xPumpBackwardOn</OPCItem>
+      <FontSize>14.25</FontSize>
+      <Size>
+        <X>120</X>
+        <Y>50</Y>
+      </Size>
+      <OPCItemFeedback>Main.Nozzle.m_Visu.PC_xPumpBackwardOn</OPCItemFeedback>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Stop Pump</Name>
+      <Popup />
+      <Location>
+        <X>55</X>
+        <Y>324</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.PC_xPumpStop</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>120</X>
+        <Y>50</Y>
+      </Size>
+      <OPCItemFeedback />
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Reset SQAS</Name>
+      <Popup />
+      <Location>
+        <X>55</X>
+        <Y>390</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Nozzle.m_Visu.PC_xResetStep</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>90</X>
+        <Y>50</Y>
+      </Size>
+      <OPCItemFeedback />
+      <ButtonMode />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>UpperFilter</Name>
+      <Popup />
+      <Location>
+        <X>385</X>
+        <Y>503</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleUpperAirPress.m_Visu.SPS_eVisuStatePropValve</OPCItem>
+      <Pictures>
+        <Item>Filter01umGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Lower Filter</Name>
+      <Popup />
+      <Location>
+        <X>385</X>
+        <Y>584</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleLowerAirPress.m_Visu.SPS_eVisuStatePropValve</OPCItem>
+      <Pictures>
+        <Item>Filter01umGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Main Filter</Name>
+      <Popup />
+      <Location>
+        <X>769</X>
+        <Y>542</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.SAMV.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>Filter5umGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>SAPV</Name>
+      <Popup />
+      <Location>
+        <X>582</X>
+        <Y>500</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleUpperAirPress.m_Visu.SPS_eVisuStatePropValve</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>SUPV</Name>
+      <Popup />
+      <Location>
+        <X>582</X>
+        <Y>600</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleLowerAirPress.m_Visu.SPS_eVisuStatePropValve</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGrayDown.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>SAMV</Name>
+      <Popup />
+      <Location>
+        <X>850</X>
+        <Y>541</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.SAMV.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ValveHorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>SLPU</Name>
+      <Popup />
+      <Location>
+        <X>188</X>
+        <Y>682</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleSprayPump.m_Visu.Pump.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>SLPU</Name>
+      <Popup />
+      <Location>
+        <X>194</X>
+        <Y>646</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.NozzleSprayPump.m_Visu.SPS_eVisuStatePump</OPCItem>
+      <Pictures>
+        <Item>PumpRightGray.png</Item>
+        <Item>PumpRightGreen.png</Item>
+        <Item>PumpRightred.png</Item>
+        <Item>PumpLeftGreen.png</Item>
+        <Item>PumpRightYellow.png</Item>
+        <Item>PumpLeftYellow.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Background</Name>
+      <Popup />
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Pictures>
+        <Item>Background.png</Item>
+      </Pictures>
+      <Colorizers>
+        <Item>
+          <Location>
+            <X>743</X>
+            <Y>568</Y>
+          </Location>
+          <OpcItem>Main.SAMV.m_Visu.SPS_eVisuState</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>295</X>
+            <Y>661</Y>
+          </Location>
+          <OpcItem>Main.NozzleSprayPump.m_Visu.SPS_eVisuStateTube</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+      </Colorizers>
+    </Item>
+  </Objects>
+</VisuMain>

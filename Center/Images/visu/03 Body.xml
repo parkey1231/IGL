@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<VisuMain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Objects>
+    <Item xsi:type="Setpoint">
+      <Name>FCRM</Name>
+      <Location>
+        <X>49</X>
+        <Y>108</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Unit>%</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>MOWM</Name>
+      <Location>
+        <X>563</X>
+        <Y>527</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Unit>%</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>MITM</Name>
+      <Location>
+        <X>734</X>
+        <Y>530</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Unit>Nm</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>MITM</Name>
+      <Location>
+        <X>734</X>
+        <Y>530</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Unit>Nm</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>MIDM</Name>
+      <Location>
+        <X>734</X>
+        <Y>442</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Unit>%</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>MCHM</Name>
+      <Location>
+        <X>734</X>
+        <Y>354</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Unit>%</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAVS</Name>
+      <Popup />
+      <Location>
+        <X>517</X>
+        <Y>807</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.AirVolume.m_Visu.AirVolume.Feedback.rValue</OPCItem>
+      <Unit>m³/h</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint>Main.AirVolume.m_Visu.AirVolume.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>2300</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>MPTS</Name>
+      <Popup />
+      <Location>
+        <X>733</X>
+        <Y>267</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.InletPressure.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide>Main.PressureCalculation.m_Visu.SPS_xHideAbsoluteValues</OPCItemHide>
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAHS</Name>
+      <Popup />
+      <Location>
+        <X>655</X>
+        <Y>807</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.BodyPressure.Feedback.rValue</OPCItem>
+      <Unit>g/kg</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint />
+      <OPCItemHide>Main.PressureCalculation.m_Visu.SPS_xHideAbsoluteValues</OPCItemHide>
+      <Min>0</Min>
+      <Max>0</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>PRPS</Name>
+      <Popup />
+      <Location>
+        <X>46</X>
+        <Y>283</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.SPS_rBodyPressureZeroed</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>PDPC</Name>
+      <Popup />
+      <Location>
+        <X>48</X>
+        <Y>445</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.SPS_rBoosterDiffPressure</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>PRTS</Name>
+      <Popup />
+      <Location>
+        <X>49</X>
+        <Y>362</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureProduct.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Heater.m_Visu.TemperatureProduct.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>90</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Product Thermo</Name>
+      <Popup />
+      <Location>
+        <X>25</X>
+        <Y>379</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eTempsource</OPCItem>
+      <Pictures>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IATS</Name>
+      <Popup />
+      <Location>
+        <X>382</X>
+        <Y>807</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureInlet.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Heater.m_Visu.TemperatureInlet.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>90</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Thermo Inlet</Name>
+      <Popup />
+      <Location>
+        <X>361</X>
+        <Y>827</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eTempsource</OPCItem>
+      <Pictures>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAVS</Name>
+      <Popup />
+      <Location>
+        <X>517</X>
+        <Y>807</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.AirVolume.m_Visu.AirVolume.Feedback.rValue</OPCItem>
+      <Unit>m³/h</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint>Main.AirVolume.m_Visu.AirVolume.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>2300</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>PDSJ</Name>
+      <Popup />
+      <Location>
+        <X>49</X>
+        <Y>210</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PressureCalculation.m_Visu.SPS_rFilterDiffPressure</OPCItem>
+      <Unit />
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>OATS</Name>
+      <Popup />
+      <Location>
+        <X>1005</X>
+        <Y>132</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureOutlet.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Heater.m_Visu.TemperatureOutlet.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>90</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Outlet Thermo</Name>
+      <Popup />
+      <Location>
+        <X>980</X>
+        <Y>153</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eTempsource</OPCItem>
+      <Pictures>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerActive.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Background</Name>
+      <Popup />
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Pictures>
+        <Item>Background.png</Item>
+      </Pictures>
+      <Colorizers>
+        <Item>
+          <Location>
+            <X>624</X>
+            <Y>159</Y>
+          </Location>
+          <OpcItem>Main.AirVolume.m_Visu.SPS_eVisuStateVentilator</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>624</X>
+            <Y>556</Y>
+          </Location>
+          <OpcItem>Main.AirVolume.m_Visu.SPS_eVisuStateVentilator</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>624</X>
+            <Y>94</Y>
+          </Location>
+          <OpcItem>Main.Sepajet.m_Visu.SPS_eVisuStateVentilator</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>306</X>
+            <Y>703</Y>
+          </Location>
+          <OpcItem>Main.SAMV.m_Visu.SPS_eVisuState</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>90</X>
+            <Y>337</Y>
+          </Location>
+          <OpcItem>Main.Discharge.m_Visu.SPS_eVisuStateCleaning</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>119</X>
+            <Y>337</Y>
+          </Location>
+          <OpcItem>Main.Discharge.m_Visu.SPS_eVisuStateTubeValve</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>187</X>
+            <Y>527</Y>
+          </Location>
+          <OpcItem>Main.Discharge.m_Visu.SPS_eVisuStateTubeValve</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>174</X>
+            <Y>429</Y>
+          </Location>
+          <OpcItem>Main.Filling.m_Visu.SPS_eVisuState</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>471</X>
+            <Y>698</Y>
+          </Location>
+          <OpcItem>Main.NozzleSprayPump.m_Visu.SPS_eVisuStateTube</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>324</X>
+            <Y>638</Y>
+          </Location>
+          <OpcItem>Main.Nozzle.m_Visu.SPS_eVisuStateCommonSprayTubeMain</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+      </Colorizers>
+    </Item>
+  </Objects>
+</VisuMain>

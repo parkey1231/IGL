@@ -1,0 +1,603 @@
+<?xml version="1.0"?>
+<VisuMain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Objects>
+    <Item xsi:type="ActualValue">
+      <Name>FAFD</Name>
+      <Popup />
+      <Location>
+        <X>110</X>
+        <Y>82</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.FAFD.m_Visu.DiffPressure.rValue</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>FAFD</Name>
+      <Popup />
+      <Location>
+        <X>149</X>
+        <Y>141</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.FAFD.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>H13HorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>FACV</Name>
+      <Popup />
+      <Location>
+        <X>236</X>
+        <Y>195</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Sepajet.m_Visu.Ventilator.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>FCAF</Name>
+      <Popup />
+      <Location>
+        <X>645</X>
+        <Y>41</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Sepajet.m_Visu.Ventilator.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Sepajet.m_Visu.PC_rVentilatorSpeed</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>100</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>Iccv</Name>
+      <Popup />
+      <Location>
+        <X>665</X>
+        <Y>569</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Cooler.m_Visu.ControlValve.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Sepajet off</Name>
+      <Popup />
+      <Location>
+        <X>777</X>
+        <Y>42</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Sepajet.m_Visu.PC_xSwitchOff</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>0</X>
+        <Y>0</Y>
+      </Size>
+      <OPCItemFeedback />
+      <ButtonMode />
+    </Item>
+    <Item>
+      <Name>FCAF</Name>
+      <Popup />
+      <Location>
+        <X>242</X>
+        <Y>86</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAHS</Name>
+      <Popup />
+      <Location>
+        <X>709</X>
+        <Y>645</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Cooler.m_Visu.Humidity.Feedback.rValue</OPCItem>
+      <Unit>g/kg</Unit>
+      <Format>{0:f2}</Format>
+      <OPCItemSetpoint>Main.Cooler.m_Visu.Humidity.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>20</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>CWTS</Name>
+      <Popup />
+      <Location>
+        <X>811</X>
+        <Y>545</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.CWTS.m_Visu.ActualValue.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>FCRM</Name>
+      <Popup />
+      <Location>
+        <X>645</X>
+        <Y>127</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Sepajet.m_Visu.Rotation.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Sepajet.m_Visu.PC_rRotation</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>100</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item>
+      <Name>IACV</Name>
+      <Popup />
+      <Location>
+        <X>1037</X>
+        <Y>462</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>ICCV</Name>
+      <Popup />
+      <Location>
+        <X>699</X>
+        <Y>522</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>HSIV</Name>
+      <Popup />
+      <Location>
+        <X>488</X>
+        <Y>513</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>IEXS</Name>
+      <Popup />
+      <Location>
+        <X>82</X>
+        <Y>462</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>PACV</Name>
+      <Popup />
+      <Location>
+        <X>31</X>
+        <Y>462</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>FEXS</Name>
+      <Popup />
+      <Location>
+        <X>82</X>
+        <Y>179</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>FACV</Name>
+      <Popup />
+      <Location>
+        <X>31</X>
+        <Y>178</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>HRBD</Name>
+      <Popup />
+      <Location>
+        <X>606</X>
+        <Y>318</Y>
+      </Location>
+      <Visible>true</Visible>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>HRBD</Name>
+      <Popup />
+      <Location>
+        <X>614</X>
+        <Y>337</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>BypassFlap.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>inlet thermometer</Name>
+      <Popup />
+      <Location>
+        <X>417</X>
+        <Y>662</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eTempsource</OPCItem>
+      <Pictures>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+        <Item>ThermometerInActive.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>IPS1</Name>
+      <Popup />
+      <Location>
+        <X>934</X>
+        <Y>421</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IPS1.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>M6Gray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>IPS2</Name>
+      <Popup />
+      <Location>
+        <X>841</X>
+        <Y>421</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IPS2.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>F9Gray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Cooler</Name>
+      <Popup />
+      <Location>
+        <X>745</X>
+        <Y>423</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Cooler.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>Coolergray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Heater</Name>
+      <Popup />
+      <Location>
+        <X>530</X>
+        <Y>423</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>heatergray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>Heater ControlVal</Name>
+      <Popup />
+      <Location>
+        <X>604</X>
+        <Y>465</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.BypassFlap.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>IPS3</Name>
+      <Popup />
+      <Location>
+        <X>395</X>
+        <Y>428</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IPS3.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>H13HorizontalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IAVS</Name>
+      <Popup />
+      <Location>
+        <X>153</X>
+        <Y>359</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.AirVolume.m_Visu.AirVolume.Feedback.rValue</OPCItem>
+      <Unit>m³/h</Unit>
+      <Format>{0:f0}</Format>
+      <OPCItemSetpoint>Main.AirVolume.m_Visu.AirVolume.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>2300</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>IPS1(M6)</Name>
+      <Popup />
+      <Location>
+        <X>931</X>
+        <Y>359</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IPS1.m_Visu.DiffPressure.rValue</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>IPS2(F9)</Name>
+      <Popup />
+      <Location>
+        <X>807</X>
+        <Y>359</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IPS2.m_Visu.DiffPressure.rValue</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Setpoint">
+      <Name>IATS</Name>
+      <Popup />
+      <Location>
+        <X>443</X>
+        <Y>645</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.TemperatureInlet.Feedback.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+      <OPCItemSetpoint>Main.Heater.m_Visu.TemperatureInlet.rSetpoint</OPCItemSetpoint>
+      <OPCItemHide />
+      <Min>0</Min>
+      <Max>90</Max>
+      <LogUserAction>false</LogUserAction>
+      <ElectronicSignaturelevel1>NONE</ElectronicSignaturelevel1>
+      <ElectronicSignaturelevel2>NONE</ElectronicSignaturelevel2>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>IPS3</Name>
+      <Popup />
+      <Location>
+        <X>363</X>
+        <Y>359</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IPS3.m_Visu.DiffPressure.rValue</OPCItem>
+      <Unit>Pa</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Cooler</Name>
+      <Location>
+        <X>838</X>
+        <Y>651</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Cooler.m_Visu.PC_xPopToggleCooler</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>100</X>
+        <Y>50</Y>
+      </Size>
+    </Item>
+    <Item xsi:type="ActualValue">
+      <Name>HSTS</Name>
+      <Popup />
+      <Location>
+        <X>384</X>
+        <Y>545</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.HSTS.m_Visu.ActualValue.rValue</OPCItem>
+      <Unit>°C</Unit>
+      <Format>{0:f1}</Format>
+    </Item>
+    <Item xsi:type="Button">
+      <Name>Heater Off</Name>
+      <Location>
+        <X>571</X>
+        <Y>651</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.PC_xPopToggleHeater</OPCItem>
+      <FontSize>12</FontSize>
+      <Size>
+        <X>100</X>
+        <Y>50</Y>
+      </Size>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>IACV</Name>
+      <Popup />
+      <Location>
+        <X>1037</X>
+        <Y>443</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IACV.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>FlapVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>FACV</Name>
+      <Popup />
+      <Location>
+        <X>37</X>
+        <Y>156</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.FACV.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>FlapVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>PACV</Name>
+      <Popup />
+      <Location>
+        <X>37</X>
+        <Y>443</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PACV.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>FlapVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="ControlValue">
+      <Name>PACV ControlVal</Name>
+      <Location>
+        <X>24</X>
+        <Y>414</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.PACV.m_Visu.ControlValue.rValue</OPCItem>
+      <Unit>%</Unit>
+      <Format>{0:f0}</Format>
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>IEXS</Name>
+      <Popup />
+      <Location>
+        <X>86</X>
+        <Y>443</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.IEXS.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ExValveGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>FEXS</Name>
+      <Popup />
+      <Location>
+        <X>86</X>
+        <Y>155</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.FEXS.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ExValveGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>FCAF</Name>
+      <Popup />
+      <Location>
+        <X>240</X>
+        <Y>106</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Sepajet.m_Visu.SPS_eVisuStateVentilator</OPCItem>
+      <Pictures>
+        <Item>VentVertLeftGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>HSIV</Name>
+      <Popup />
+      <Location>
+        <X>509</X>
+        <Y>530</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Heater.m_Visu.SPS_eVisuState</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>ICCV</Name>
+      <Popup />
+      <Location>
+        <X>726</X>
+        <Y>533</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem>Main.Cooler.m_Visu.SPS_eVisuStateValve</OPCItem>
+      <Pictures>
+        <Item>ValveVerticalGray.png</Item>
+      </Pictures>
+      <Colorizers />
+    </Item>
+    <Item xsi:type="DynamicPicture">
+      <Name>Background</Name>
+      <Popup />
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Visible>true</Visible>
+      <OPCItem />
+      <Pictures>
+        <Item>Background.png</Item>
+      </Pictures>
+      <Colorizers>
+        <Item>
+          <Location>
+            <X>618</X>
+            <Y>452</Y>
+          </Location>
+          <OpcItem>Main.AirVolume.m_Visu.SPS_eVisuStateVentilator</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+        <Item>
+          <Location>
+            <X>618</X>
+            <Y>166</Y>
+          </Location>
+          <OpcItem>Main.Sepajet.m_Visu.SPS_eVisuStateVentilator</OpcItem>
+          <Stopper>false</Stopper>
+        </Item>
+      </Colorizers>
+    </Item>
+  </Objects>
+</VisuMain>

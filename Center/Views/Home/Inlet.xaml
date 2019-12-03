@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Center.Views.Home.Inlet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <StackPanel>
+
+        <Image HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Source="E:\Git\Repos\IGL\Center\Images\visu\01 Main\Background.png"
+               Stretch="None" />
+
+    </StackPanel>
+
+
+</UserControl>
