@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="ViewModels\Alarms\AlarmsViewModel.cs" />
     <Compile Include="ViewModels\Dismounting\DismountingViewModel.cs" />
+    <Compile Include="ViewModels\Process\NewProcessRecipeViewModel.cs" />
     <Compile Include="ViewModels\Service\InfoViewModel.cs" />
     <Compile Include="ViewModels\Service\PLCViewModel.cs" />
     <Compile Include="ViewModels\Service\RevisionViewModel.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="ViewModels\Home\InletViewModel.cs" />
     <Compile Include="ViewModels\Home\MainViewModel.cs" />
     <Compile Include="ViewModels\Home\OutletViewModel.cs" />
-    <Compile Include="ViewModels\Process\RecipeViewModel.cs" />
+    <Compile Include="ViewModels\Process\ProcessRecipeViewModel.cs" />
     <Compile Include="ViewModels\Home\SprayViewModel.cs" />
     <Compile Include="ViewModels\Report\ReportParameterViewModel.cs" />
     <Compile Include="ViewModels\Trend\TrendViewModel.cs" />
@@ -106,6 +107,9 @@
     </Compile>
     <Compile Include="Views\Process\BatchInfo.xaml.cs">
       <DependentUpon>BatchInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Process\NewProcessRecipe.xaml.cs">
+      <DependentUpon>NewProcessRecipe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Process\ProcessRecipe.xaml.cs">
       <DependentUpon>ProcessRecipe.xaml</DependentUpon>
@@ -178,6 +182,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Process\NewProcessRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Process\ProcessRecipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,6 +226,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacePanel\FacePanel.csproj">
+      <Project>{DDF0B0BF-245C-45AC-BA66-9D52E95B2CF8}</Project>
+      <Name>FacePanel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

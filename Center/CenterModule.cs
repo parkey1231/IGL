@@ -11,6 +11,8 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 
+using FacePanel.Views;
+
 namespace Center
 {
     public class CenterModule : IModule
@@ -28,6 +30,7 @@ namespace Center
             //Process
             regionManager.RegisterViewWithRegion("CenterRegion", typeof(BatchInfo));
             regionManager.RegisterViewWithRegion("CenterRegion", typeof(ProcessRecipe));
+            regionManager.RegisterViewWithRegion("CenterRegion", typeof(NewProcessRecipe));
             //WIP
             regionManager.RegisterViewWithRegion("CenterRegion", typeof(WIPRecipe));
             //Dismounting
@@ -43,6 +46,9 @@ namespace Center
             regionManager.RegisterViewWithRegion("CenterRegion", typeof(Revision));
             regionManager.RegisterViewWithRegion("CenterRegion", typeof(PLC));
             regionManager.RegisterViewWithRegion("CenterRegion", typeof(Info));
+
+
+           // regionManager.RegisterViewWithRegion("CenterRegion", typeof(ParameterItem1));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

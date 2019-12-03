@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bottom.ViewModels
+namespace Top.ViewModels
 {
-    public class ViewAViewModel : BindableBase
+    public class TopBarViewModel : BindableBase
     {
         private string _message;
         public string Message
@@ -17,7 +17,7 @@ namespace Bottom.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public ViewAViewModel()
+        public TopBarViewModel()
         {
             Message = "View A from your Prism Module";
         }

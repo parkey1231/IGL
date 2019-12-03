@@ -1,16 +1,18 @@
-﻿using Bottom.Views;
+﻿using FacePanel.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 
-namespace Bottom
+namespace FacePanel
 {
-    public class BottomModule : IModule
+    public class FacePanelModule : IModule
     {
+        public int MyProperty { get; set; }
+
+
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("BottomRegion", typeof(BottomInfoBar));
+ 
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Center.ViewModels.Process
+namespace FacePanel.ViewModels
 {
-    public class RecipeViewModel : BindableBase
+    public class ParameterItem1ViewModel : BindableBase
     {
-        public RecipeViewModel()
+        public ParameterItem1ViewModel()
         {
 
         }

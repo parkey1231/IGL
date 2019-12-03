@@ -10,7 +10,7 @@ namespace Top
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("TopRegion", typeof(ViewA));
+            regionManager.RegisterViewWithRegion("TopRegion", typeof(TopBar));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

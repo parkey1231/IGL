@@ -1,14 +1,19 @@
-﻿<UserControl x:Class="Center.Views.Process.ProcessRecipe"
+﻿<UserControl x:Class="Bottom.Views.BottomInfoBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"               
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             xmlns:local="clr-namespace:Bottom.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignWidth="1920"
+             d:DesignHeight="50"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
 
-    <UserControl.Resources>
-        
-        <Style TargetType="{x:Type Image}">
-            <Setter Property="Width" Value="37" />
-            <Setter Property="Height" Value="37" />
+    <UserControl.Resources>       
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="42" />
+            <Setter Property="Height" Value="42" />
         </Style>
 
         <Style x:Key="FocusVisual">
@@ -35,7 +40,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="Black" />
 
         <!-- Button Style -->
-        <Style x:Key="ButtonStyleProcessRicipe"
+        <Style x:Key="ButtonStyleBottom"
            TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle"
                 Value="{StaticResource FocusVisual}" />
@@ -47,12 +52,11 @@
                 Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="BorderThickness" Value="1" />
-            <!--<Setter Property="HorizontalContentAlignment" Value="Center" />-->
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <!--<Setter Property="VerticalContentAlignment" Value="Center" />-->
-            <Setter Property="Height" Value="60" />
-            <Setter Property="Width" Value="200" />
-            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Height" Value="50" />
+            <!--<Setter Property="Width" Value="220" />-->
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -86,7 +90,7 @@
                                     TargetName="border"
                                     Value="{StaticResource Button.MouseOver.Border}" />
                             </Trigger>-->
-                            <Trigger Property="IsPressed"
+                            <!--<Trigger Property="IsPressed"
                                  Value="true">
                                 <Setter Property="Background"
                                     TargetName="border"
@@ -94,7 +98,7 @@
                                 <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="{StaticResource Button.Pressed.Border}" />
-                            </Trigger>
+                            </Trigger>-->
                             <Trigger Property="IsEnabled"
                                  Value="false">
                                 <Setter Property="Background"
@@ -116,44 +120,78 @@
 
     </UserControl.Resources>
 
-    <Grid>
+    <Grid Background="#FF005EB8">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="1.1*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="3.5*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid />
-        
-        <StackPanel Grid.Column="1">
-            <Button Margin="5"  Content="load"  Style="{DynamicResource ButtonStyleProcessRicipe}" />
-            <Button Margin="5"  Content="Unload" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
-            <Button Margin="5"  Content="Activate" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
-            <Button Margin="5"  Content="Deactivate" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
-            <Button Margin="5"  Content="Delete" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
-            <Button Margin="5"  Content="Change" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
-            <Button Margin="5"  Content="New" Command="{Binding NavigateCommand}" CommandParameter="NewProcessRecipe" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
-            <Button Margin="5"  Content="Show" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
-            <Button Margin="5"  Content="Filter" Style="{DynamicResource ButtonStyleProcessRicipe}"  />
+        <Grid Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Margin="5 0 0 0" Text="Stoped" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+            <Rectangle Fill="LightBlue" Height="1" VerticalAlignment="Bottom"  />
+            <TextBlock x:Name="CPUCounterText" Margin="5 0 0 0" Grid.Row="1" FontSize="12" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
-            <TextBox Margin="5" FontSize="16" HorizontalAlignment="Left" Width="200" />
+        </Grid>
 
-            <StackPanel Orientation="Horizontal">
-                <CheckBox Margin="5"/>
-                <TextBlock Text="Unreleased recipes" Foreground="White" Margin="5"/>
-            </StackPanel>
+        <Grid Grid.Column="1">
+            <Rectangle Fill="LightBlue" Width="1" HorizontalAlignment="Left"  />
+            <Rectangle Fill="LightBlue" Width="1" HorizontalAlignment="Right"  />
+        </Grid>
 
-            <StackPanel Orientation="Horizontal">
-                <CheckBox Margin="5"/>
-                <TextBlock Text="Disabled recipes" Foreground="White" Margin="5"/>
-            </StackPanel>
+        <Grid Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*" />
+            </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal">
-                <CheckBox Margin="5"/>
-                <TextBlock Text="Outdated recipes" Foreground="White" Margin="5"/>
-            </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
+            <TextBlock Grid.Row="0" Text="Process Time" Foreground="White" FontSize="14" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="1" Text="Spraying Time" Foreground="White" FontSize="14" VerticalAlignment="Center" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="00:00:00" Foreground="White" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="00:00:00" Foreground="White" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
-        </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="LightBlue" Height="1" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+            <Rectangle Fill="LightBlue" Width="1" HorizontalAlignment="Left" Grid.RowSpan="2" />
+            <Rectangle Grid.Column="1" Fill="LightBlue" Width="1" HorizontalAlignment="Right" Grid.RowSpan="2"  />
+            <TextBlock Text="Name:" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="5" />
+            <TextBlock Grid.Row="1" Text="Level:" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="5" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="1" FontWeight="Bold"  Text="Innojet" FontSize="14" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" />
+            <TextBlock Grid.Row="1" Grid.Column="1" FontWeight="Bold" Text="SUPERVISOR" FontSize="14" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        </Grid>
+
+        <Grid Grid.Column="5">
+            <Button Background="Transparent" Command="{Binding ShutdownCommand}" Style="{StaticResource ButtonStyleBottom}" BorderThickness="0">
+                <Image Source="/Bottom;component/Images/Shutdown.png" MaxHeight="50" MaxWidth="50"/>
+            </Button>
+        </Grid>
+
     </Grid>
+
 
 </UserControl>
