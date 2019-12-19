@@ -25,7 +25,7 @@ namespace IGL
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            return new DirectoryModuleCatalog() { ModulePath = @".\\Modules" };
+            return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
         }
 
         //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

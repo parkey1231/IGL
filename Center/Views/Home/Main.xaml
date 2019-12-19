@@ -4,11 +4,7 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="17*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Ramp}" />
-        <Button Grid.Row="1" x:Name="ReadButton" Command="{Binding ReadCommand}" />
+        
+        <TextBlock Text="Main" />    
     </Grid>
 </UserControl>
