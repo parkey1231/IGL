@@ -4,24 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:ViewModels="clr-namespace:Menu.ViewModels"
-             xmlns:Converters="clr-namespace:Menu.Converters"
-             xmlns:Menu="clr-namespace:Menu"
-             x:Class="Menu.Views.MenuView"
+             xmlns:ViewModels="clr-namespace:Menu.ViewModels"             
+             xmlns:Menu="clr-namespace:Menu"         
+      
+            
+             xmlns:Converters="clr-namespace:Infrastructure.Converters;assembly=Infrastructure"         
+      
+            
+             x:Class="Menu.Views.LeftMenuView"
              mc:Ignorable="d"
-             Name="UserControlMenu"
+             x:Name="UserControlMenu"
              d:DesignHeight="2800"
              d:DesignWidth="240"
              prism:ViewModelLocator.AutoWireViewModel="True">
 
     <UserControl.Resources>
 
+
         <Converters:BooleanToBackgroundConverter x:Key="BooleanToBackgroundConverter"/>
 
-        <Style TargetType="Image">
+
+        <Style TargetType="{x:Type Image}">
             <Setter Property="Width" Value="37" />
             <Setter Property="Height" Value="37" />
-        </Style>        
+        </Style>
 
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -133,7 +139,7 @@
 
     </UserControl.Resources>-->
 
-    <StackPanel Width="{Binding ElementName=UserControlMenu, Path=ActualWidth}">
+    <StackPanel Width="{Binding ActualWidth, ElementName=UserControlMenu}">
 
         <StackPanel>
             <!-- Home button -->
@@ -143,9 +149,9 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Home" Width="120" Padding="10 0 0 0" />
                     <Border Width="75" />
-                    <Image  Source="/Menu;component/Images/Home.png" />      
-                    
-                    
+                    <Image  Source="/Menu;component/Images/Home.png" />
+
+
                 </StackPanel>
             </Button>
 
@@ -443,8 +449,8 @@
                         <Border Width="65" />
                         <Image  Source="/Menu;component/Images/WIP.Pause.png" />
                     </StackPanel>
-                </Button>                
-                
+                </Button>
+
             </StackPanel>
 
         </StackPanel>
@@ -580,7 +586,7 @@
 
             </StackPanel>
 
-            
+
         </StackPanel>
 
         <StackPanel>

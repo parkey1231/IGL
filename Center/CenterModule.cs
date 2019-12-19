@@ -11,8 +11,6 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 
-using FacePanel.Views;
-
 namespace Center
 {
     public class CenterModule : IModule

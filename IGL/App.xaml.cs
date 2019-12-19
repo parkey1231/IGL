@@ -25,7 +25,7 @@ namespace IGL
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
+            return new DirectoryModuleCatalog() { ModulePath = @".\\Modules" };
         }
 
         //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
@@ -36,6 +36,7 @@ namespace IGL
         //    moduleCatalog.AddModule<Menu.MenuModule>();
         //    moduleCatalog.AddModule<RightMenu.RightMenuModule>();
         //    moduleCatalog.AddModule<Top.TopModule>();
+        //    moduleCatalog.AddModule<Infrastructure.InfrastructureModule>();
         //}
 
 

@@ -227,12 +227,6 @@
   <ItemGroup>
     <Folder Include="Images\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FacePanel\FacePanel.csproj">
-      <Project>{ddf0b0bf-245c-45ac-ba66-9d52e95b2cf8}</Project>
-      <Name>FacePanel</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*$(TargetExt)" "$(SolutionDir)$(SolutionName)\$(OutDir)Modules\" /Y /S</PostBuildEvent>

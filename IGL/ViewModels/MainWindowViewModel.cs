@@ -15,8 +15,8 @@ namespace IGL.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private bool _rightRegionStatus;
-        public bool RightRegionStatus
+        private Visibility _rightRegionStatus;
+        public Visibility RightRegionStatus
         {
             get { return _rightRegionStatus; }
             set { SetProperty(ref _rightRegionStatus, value); }
@@ -57,13 +57,13 @@ namespace IGL.ViewModels
 
         private void HiddeRighRegion()
         {
-            RightRegionStatus = false;
+            RightRegionStatus = Visibility.Hidden;
             Spanvalue = 2;
         }
 
         private void ShowRightRegion()
         {
-            RightRegionStatus = true;
+            RightRegionStatus = Visibility.Visible;
             Spanvalue = 1;
         }
     }

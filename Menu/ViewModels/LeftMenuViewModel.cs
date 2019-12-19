@@ -12,9 +12,9 @@ using CompositeCommands;
 
 namespace Menu.ViewModels
 {
-    public class MenuViewModel : BindableBase
+    public class LeftMenuViewModel : BindableBase
     {
-        private readonly IRegionManager _regionManager;
+        private IRegionManager _regionManager;
 
         #region Home
 
@@ -304,15 +304,14 @@ namespace Menu.ViewModels
         {
             get { return _applicationCommands; }
             set { SetProperty(ref _applicationCommands, value); }
-        }
+        }        
 
-
-        public MenuViewModel(IRegionManager regionManager, IApplicationCommands applicationCommands)
-        {            
+        public LeftMenuViewModel(IRegionManager regionManager, IApplicationCommands applicationCommands)
+        {
             _regionManager = regionManager;
 
-            ApplicationCommands = applicationCommands;   
-            
+            ApplicationCommands = applicationCommands;
+
             NavigateCommand = new DelegateCommand<string>(Navigate);
 
             GoHomeCommand = new DelegateCommand(GoHome);
@@ -341,7 +340,7 @@ namespace Menu.ViewModels
             _applicationCommands.HiddeCompositeCommand.RegisterCommand(NavigateCommand);
             _applicationCommands.ShowCompositeCommand.RegisterCommand(NavigateCommand);
 
-            
+
 
 
         }

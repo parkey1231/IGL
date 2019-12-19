@@ -10,7 +10,7 @@ namespace Menu
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("LeftRegion", typeof(MenuView));
+            regionManager.RegisterViewWithRegion("LeftRegion", typeof(LeftMenuView));
 
            
         }
